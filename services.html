@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gardea Construction - Metro Atlanta Construction || Gallery</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="gallery.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="javascript/jquery.js"></script>
+
+	<script type="text/javascript" src="javascript/slide.js"></script>
+	<script type="text/javascript">
+	
+	jQuery(function($) {
+		
+		$('.gallery_demo_unstyled').addClass('gallery_demo'); // adds new class name to maintain degradability
+		
+		$('ul.gallery_demo').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				if(! ($.browser.mozilla && navigator.appVersion.indexOf("Win")!=-1) ) { // FF/Win fades large images terribly slow
+					image.css('display','none').fadeIn(1000);
+				}
+				caption.css('display','none').fadeIn(1000);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.3);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1500);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	});
+	
+	</script>
+	<style media="screen,projection" type="text/css">
+	
+	/* BEGIN DEMO STYLE */
+	*{margin:0;padding:0}
+
+	a{color:#348;text-decoration:none;outline:none;}
+	a:hover{color:#67a;}
+	.caption{font-style:italic;color:#887;}
+	.demo{position:relative;margin-top:2em;}
+	.gallery_demo{width:573px;margin:0 auto;}
+	.gallery_demo li{width:68px;height:50px;border:3px double #fff;margin: 0 2px;background:#fff;}
+	.gallery_demo li div{left:240px}
+	.gallery_demo li div .caption{font:italic 0.7em/1.4 georgia,serif;}
+	
+	#main_image{margin:0 auto 60px auto;height:458px;width:571px;background:black;}
+	#main_image img{margin-bottom:19px;}
+	
+	.nav{padding-top:25px;clear:both;font:80% 'helvetica neue',sans-serif;letter-spacing:3px;text-transform:uppercase;}
+	
+	.info{text-align:left;width:571px;margin:30px auto;border-top:1px dotted #221;padding-top:30px;}
+	.info p{margin-top:1.6em;}
+	
+    </style>
+</head>
+
+<body>
+<div id="wrapper">
+	<div class="orange" id="phone"><strong>Call Now: 770-668-4858 | 770-862-2113</strong></div>
+  <div id="heading"><img src="images/logo2.gif" alt="Gardea Construction" />  </div>
+  <div id="menu">&nbsp;
+    
+    <a class="selected" href="index.html">Home</a>
+     | <a href="services.html#gallery/barn.jpg">Services</a>
+      | <a href="gallery.html">Gallery</a>
+       | <a href="contact.html">Contact</a>
+       
+        </div>
+    <div id="leftContent"><span class="style1">GARDEA SERVICES</span><br />
+      Click Below of Images<br />
+        - Decks<br />
+- Stonework<br />
+- Framing<br />
+- Masonry<br />
+- Sheds<br />
+- Porches<br />
+- Remodeling<br />
+<br />
+<span class="orange"><strong>Call For More!</strong></span> <br />
+<br />
+<br />
+<br />
+<div style="text-align:center;"><img src="images/quote.gif" alt="No job too small" width="178" height="48" /> </div>
+<br />
+  </div>
+    <div id="rightContent">
+<div class="demo">
+<ul class="gallery_demo_unstyled">
+    <li><img src="gallery/barn.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/stonework.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/deck.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/barndoor.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/fence.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/frontpagecap.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/masonry.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/porch.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/remodeling.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/roof.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/stair.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/webster.jpg" alt="Flowing Rock"  ></li>
+    <li><img src="gallery/webster2.jpg" alt="Flowing Rock"  ></li>
+</ul>
+
+<p class="nav"><a href="#" onclick="$.galleria.prev(); return false;">previous</a> | <a href="#" onclick="$.galleria.next(); return false;">next</a></p>
+</div>
+    </div>
+  <div id="footer">
+    <hr noshade="noshade" size="1" color="#cccccc"  /><br />
+Copyright 2009, Gardea Construction. All Rights Reserved. | <a href="http://www.wizults.com/">Designed by WIZULTS</a>    </div>
+</div><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9975620-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
